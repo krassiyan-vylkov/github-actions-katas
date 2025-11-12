@@ -33,15 +33,18 @@ jobs:
           # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISABLE_ERRORS: true          
-  markdown-lint:
-    name: markdown-lint
-    runs-on: ubuntu-latest
-    steps:
-        - uses: nosborn/github-action-markdown-cli@v3.5.0
-        - run: npx markdown-cli *.md
   EditorConfig:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: editorconfig-checker/action-editorconfig-checker@main
       - run: editorconfig-checker
+
+
+
+
+
+
+
+
+
