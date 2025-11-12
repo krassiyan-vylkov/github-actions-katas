@@ -52,7 +52,7 @@ jobs:
     - name: Download code
       uses: actions/download-artifact@v4
       with:
-        name: code
+        name: build
         path: .
     - name: build docker
       run: chmod +x ci/build-docker.sh && export GIT_COMMIT="GA-$GITHUB_SHA" && ci/build-docker.sh
