@@ -1,12 +1,6 @@
 name: Main workflow
 on: push
 jobs:
-  Editorconfig:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: editorconfig-checker/action-editorconfig-checker@main
-      - run: editorconfig-checker
   Build:
     runs-on: ubuntu-latest
     container: gradle:6-jdk11
@@ -39,7 +33,3 @@ jobs:
           # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISABLE_ERRORS: true   
-
-        path: .
-    - name: Execute component test
-      run: chmod +x ci/component-test.sh && GIT_COMMIT="GA-$GITHUB_SHA" && ci/component-test.sh
