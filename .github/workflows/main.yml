@@ -46,7 +46,7 @@ jobs:
       with:
        fetch-depth: 0
     - name: SonarQubeScan
-      uses: sonarsource/sonarcloud-github-action@<action version>
+      uses: sonarsource/sonarcloud-github-action@v6.0.0
       env:
         SONAR_TOKEN: ${{ secrets.SONARCLOUDTOKEN }}
 
